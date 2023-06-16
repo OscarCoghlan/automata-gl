@@ -1,5 +1,5 @@
 PREFIX = /usr/local
-OBJS = main.o
+OBJS = main.o glad.o loader.o
 CFLAGS = -Wall
 INCLUDES = -I./include
 LIBS = -lglfw -lGL -lm -lX11 -lpthread -lXi -lXrandr -ldl 
@@ -14,3 +14,5 @@ clean:
 .cpp.o:
 	${CC} ${CFLAGS} ${INCLUDES} -c $< ${LIBS}
 
+.c.o:
+	${CC} ${CFLAGS} ${INCLUDES} -c $< ${LIBS}
