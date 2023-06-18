@@ -32,12 +32,12 @@ static const GLfloat g_color_buffer_data[] = {
 };
 
 static const GLfloat g_uv_buffer_data[] = {
-    0.000059f, 1.0f-0.000004f,
-    0.000103f, 1.0f-0.336048f,
-    0.335973f, 1.0f-0.335903f,
-    1.000023f, 1.0f-0.000013f,
-    0.667979f, 1.0f-0.335851f,
-    0.999958f, 1.0f-0.336064f
+   -1.0f, -1.0f, 
+    1.0f, -1.0f,
+   -1.0f,  1.0f,
+   -1.0f,  1.0f,
+	1.0f,  1.0f,
+	1.0f, -1.0f,
 };
 
 GLuint loadBMP_custom(const char * imagepath) {
@@ -156,18 +156,22 @@ int main() {
 
 	GLuint programID = LoadShaders("basic.vert", "basic.frag");
 
-	glClearColor(0.0f, 0.0f, 0.6f, 0.8f);
+	glClearColor(0.0f, 0.0f, 0.6f, 1.f);
 
 	const unsigned char data[] = {
+		255,185,185,
+		255,100,100,
 		255,0,0,
-		255,0,0,
-		255,0,0,
-		255,0,0,
-		254,0,0,
-		255,0,0,
-		255,0,0,
-		255,0,0,
-		255,0,0,
+		0,0,0,
+		185,255,185,
+		100,255,100,
+		0,255,0,
+		0,0,0,
+		185,185,255,
+		100,100,255,
+		0,0,255,
+		255, 255,255,
+		255,255,255
 	};
 	const int height = 3;
 	const int width = 3;
@@ -175,7 +179,7 @@ int main() {
 
 	// Create one OpenGL texture
 	GLuint textureID;
-	/*glGenTextures(1, &textureID);
+	glGenTextures(1, &textureID);
 
 	// "Bind" the newly created texture : all future texture functions will modify this texture
 	glBindTexture(GL_TEXTURE_2D, textureID);
@@ -185,8 +189,8 @@ int main() {
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-*/
-	textureID = loadBMP_custom("./land.bmp");
+
+	//textureID = loadBMP_custom("./land.bmp");
 
 	while (!glfwWindowShouldClose(window))
     {
