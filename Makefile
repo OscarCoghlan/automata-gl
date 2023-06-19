@@ -1,5 +1,5 @@
 PREFIX = /usr/local
-OBJS = main.o glad.o loader.o
+OBJS = main.o glad.o loader.o calc.o draw.o
 CFLAGS = -Wall
 INCLUDES = -I./include
 LIBS = -lglfw -lGL -lm -lX11 -lpthread -lXi -lXrandr -ldl 
