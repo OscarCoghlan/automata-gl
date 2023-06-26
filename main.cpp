@@ -1,5 +1,7 @@
 #include "main.h"
+#include <unistd.h>
 #include <iostream>
+
 
 void error_callback(int error, const char* description)
 {
@@ -45,7 +47,7 @@ int main() {
 	glfwWindowHint(GLFW_SAMPLES, 4); //4x antialiasing
 	//gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 
-	GLFWwindow* window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Hello World", NULL, NULL);	
+	GLFWwindow* window = glfwCreateWindow(WINDOW_WIDTH * SCALE, WINDOW_HEIGHT * SCALE, "Hello World", NULL, NULL);	
 
 	if (!window) {
 		std::cerr << "Failed to open glfw window";
@@ -86,12 +88,6 @@ int main() {
 
 	glClearColor(0.0f, 0.0f, 0.6f, 1.f);
 
-	char * world = GenWorld();
-
-	world[1595] = 1;
-	world[1597] = 1;
-
-	unsigned char * data = GenImage(world);
 
 	/*unsigned char data[] = {
 		255,185,185,
@@ -106,8 +102,6 @@ int main() {
 		100,100,255,
 		0,0,255,
 	};*/
-	const int height = 3;
-	const int width = 3;
 
 
 	// Create one OpenGL texture
@@ -125,14 +119,46 @@ int main() {
 
 	//textureID = loadBMP_custom("./land.bmp");
 
+	char * world = GenWorld();
+
+	unsigned char * data;
+
+	data = GenImage(world);
+	int count = 0;
+
+	world[WINDOW_WIDTH * 4 + 1] = 1;
+	world[WINDOW_WIDTH * 4 + 2] = 1;
+	world[WINDOW_WIDTH * 4 + 3] = 1;
+
+	double xpos, ypos;
+
 	while (!glfwWindowShouldClose(window))
     {
+		
+		glfwGetCursorPos(window, &xpos, &ypos);
+		int state = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT);
+		if (state == GLFW_PRESS)
+		{
+			Draw(world, xpos, ypos, 10, 10);
+		}
+
+#ifdef DEBUG
+		if (count % 144 == 0) {
+			std::cout << "1 sec\n";
+		}
+		std::cout << "Cursor: (" << xpos <<", " << ypos <<")\n";
+#endif
+		count += 1;
+		//logic
+		world = StepWorld(world);
+
+		data = GenImage(world);
+
+
 		glTexImage2D(GL_TEXTURE_2D, 0,GL_RGB, WINDOW_WIDTH, WINDOW_HEIGHT, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+		free(data);
         // Render here
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		data[15] += 1;
-		data[16] += 1;
-		data[17] += 1;
 
 		glUseProgram(programID);
 
