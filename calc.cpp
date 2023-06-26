@@ -22,7 +22,7 @@ char * StepWorld(char * world) {
 
 			}
 
-				worldstepped[accesscoord] = rule[worldstepped[accesscoord] * 2 + world[accesscoord]];
+			worldstepped[accesscoord] = rule[worldstepped[accesscoord] * 2 + world[accesscoord]];
 		}
 	}
 

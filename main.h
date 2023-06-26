@@ -3,8 +3,8 @@
 #include <vector>
 
 const double SCALE = 2;
-const int WINDOW_HEIGHT = 1000 / SCALE;
-const int WINDOW_WIDTH = 1840 / SCALE;
+const int WINDOW_HEIGHT = 800 / SCALE;
+const int WINDOW_WIDTH = 800 / SCALE;
 const int WINDOW_LENGTH = WINDOW_HEIGHT * WINDOW_WIDTH;
 
 GLuint LoadShaders(const char *, const char *);

@@ -89,21 +89,6 @@ int main() {
 	glClearColor(0.0f, 0.0f, 0.6f, 1.f);
 
 
-	/*unsigned char data[] = {
-		255,185,185,
-		255,100,100,
-		255,0,0,
-		0,0,0,
-		185,255,185,
-		255,255,255,
-		0,255,0,
-		0,0,0,
-		185,185,255,
-		100,100,255,
-		0,0,255,
-	};*/
-
-
 	// Create one OpenGL texture
 	GLuint textureID;
 	glGenTextures(1, &textureID);
@@ -111,13 +96,8 @@ int main() {
 	// "Bind" the newly created texture : all future texture functions will modify this texture
 	glBindTexture(GL_TEXTURE_2D, textureID);
 
-	// Give the image to OpenGL
-	//glTexImage2D(GL_TEXTURE_2D, 0,GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-
-	//textureID = loadBMP_custom("./land.bmp");
 
 	char * world = GenWorld();
 
@@ -125,10 +105,6 @@ int main() {
 
 	data = GenImage(world);
 	int count = 0;
-
-	world[WINDOW_WIDTH * 4 + 1] = 1;
-	world[WINDOW_WIDTH * 4 + 2] = 1;
-	world[WINDOW_WIDTH * 4 + 3] = 1;
 
 	double xpos, ypos;
 
