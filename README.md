@@ -9,4 +9,7 @@ Dependencies:
 Compile:  
 ```make```
 
+Run:  
+```./main```
+
 
