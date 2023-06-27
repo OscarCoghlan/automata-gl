@@ -2,7 +2,7 @@
 #include "GLFW/glfw3.h"
 #include <vector>
 
-const double SCALE = 1;
+const double SCALE = 2;
 const int WINDOW_HEIGHT = 800 / SCALE;
 const int WINDOW_WIDTH = 800 / SCALE;
 const int WINDOW_LENGTH = WINDOW_HEIGHT * WINDOW_WIDTH;
