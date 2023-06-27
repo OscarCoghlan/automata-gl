@@ -12,4 +12,5 @@ Compile:
 Run:  
 ```./main```
 
-
+Example of H-trees life rule (B1/S012345678)  
+![image of htree life](https://github.com/OscarCoghlan/automata-gl/blob/master/img/htree.png)
