@@ -3,7 +3,7 @@ Conway's game of life and other cellular automata implemented in C++ using openg
 Tested on x11  
   
 Dependencies:  
-   \- glfw
+ &nbsp;\- glfw
 
 
 Compile:  
