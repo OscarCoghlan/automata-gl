@@ -42,7 +42,9 @@ char * Draw(char * world, double xpos, double ypos, int xsize, int ysize) {
 
 	for (int i = ypos - ysize / 2; i < ypos + ysize / 2; i++) {
 		for (int j = xpos - xsize / 2; j < xpos + xsize / 2; j++) {
-			world[i * WINDOW_WIDTH + j] = 1;
+			if (i * WINDOW_WIDTH + j >= 0 && i * WINDOW_WIDTH + j < WINDOW_LENGTH) {
+				world[i * WINDOW_WIDTH + j] = 1;
+			}
 		}
 	}
 	return world;
