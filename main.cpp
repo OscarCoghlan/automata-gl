@@ -84,7 +84,7 @@ int main() {
 	glBufferData(GL_ARRAY_BUFFER, sizeof(g_uv_buffer_data), g_uv_buffer_data, GL_STATIC_DRAW);
 
 
-	GLuint programID = LoadShaders("basic.vert", "basic.frag");
+	GLuint programID = LoadShaders();
 
 	glClearColor(0.0f, 0.0f, 0.6f, 1.f);
 
