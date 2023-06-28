@@ -7,6 +7,8 @@ const int WINDOW_HEIGHT = 800 / SCALE;
 const int WINDOW_WIDTH = 800 / SCALE;
 const int WINDOW_LENGTH = WINDOW_HEIGHT * WINDOW_WIDTH;
 
+const int BRUSH_SIZE = 6;
+
 const short mask[] = {-1, -1, 0, -1, 1, -1, -1, 0, 1, 0, -1, 1, 0, 1, 1, 1};
 const int masksize = 16;
 

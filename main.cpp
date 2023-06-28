@@ -47,7 +47,7 @@ int main() {
 	glfwWindowHint(GLFW_SAMPLES, 4); //4x antialiasing
 	//gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 
-	GLFWwindow* window = glfwCreateWindow(WINDOW_WIDTH * SCALE, WINDOW_HEIGHT * SCALE, "Hello World", NULL, NULL);	
+	GLFWwindow* window = glfwCreateWindow(WINDOW_WIDTH * SCALE, WINDOW_HEIGHT * SCALE, "Glfw Window", NULL, NULL);	
 
 	if (!window) {
 		std::cerr << "Failed to open glfw window";
@@ -115,7 +115,7 @@ int main() {
 		int state = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT);
 		if (state == GLFW_PRESS)
 		{
-			Draw(world, xpos, ypos, 6, 6);
+			Draw(world, xpos, ypos, BRUSH_SIZE, BRUSH_SIZE);
 		}
 
 #ifdef DEBUG
