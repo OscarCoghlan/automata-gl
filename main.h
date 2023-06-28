@@ -11,16 +11,16 @@ const short mask[] = {-1, -1, 0, -1, 1, -1, -1, 0, 1, 0, -1, 1, 0, 1, 1, 1};
 const int masksize = 16;
 
 //Conway's game of life
-//const short rule[] = {0,0, 0,0, 0,1, 1,1, 0,0, 0,0, 0,0, 0,0, 0,0}; 
-//const size_t rulesize = 18;
+const short rule[] = {0,0, 0,0, 0,1, 1,1, 0,0, 0,0, 0,0, 0,0, 0,0}; 
+const size_t rulesize = 18;
 
 //Maze
 //const short rule[] = {0,1, 0,1, 0,1, 1,1, 0,1, 0,1, 0,0, 0,0, 0,0}; 
 //const size_t rulesize = 18;
 
 //H-Trees
-const short rule[] = {0,1, 1,1, 0,1, 0,1, 0,1, 0,1, 0,1, 0,1, 0,1}; 
-const size_t rulesize = 18;
+//const short rule[] = {0,1, 1,1, 0,1, 0,1, 0,1, 0,1, 0,1, 0,1, 0,1}; 
+//const size_t rulesize = 18;
 
 GLuint LoadShaders(const char *, const char *);
 

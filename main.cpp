@@ -115,7 +115,7 @@ int main() {
 		int state = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT);
 		if (state == GLFW_PRESS)
 		{
-			Draw(world, xpos, ypos, 3, 3);
+			Draw(world, xpos, ypos, 6, 6);
 		}
 
 #ifdef DEBUG

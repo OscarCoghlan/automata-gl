@@ -12,7 +12,7 @@ clean:
 	-rm -f *.o core *.core
 
 .cpp.o:
-	${CC} ${CFLAGS} ${INCLUDES} -c $<
+	${CC} ${CFLAGS} ${INCLUDES} -c $< ${LIBS}
 
 .c.o:
-	${CC} ${CFLAGS} ${INCLUDES} -c $<
+	${CC} ${CFLAGS} ${INCLUDES} -c $< ${LIBS}
