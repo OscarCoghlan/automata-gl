@@ -1,6 +1,6 @@
 #include "main.h"
+#include "config.h"
 #include <cstdlib>
-#include <iostream>
 
 char * StepWorld(char * world) {
 	char * worldstepped = (char *) calloc(WINDOW_WIDTH * WINDOW_HEIGHT, sizeof(char));
@@ -34,7 +34,7 @@ char * GenWorld() {
 	return (char *)calloc(WINDOW_WIDTH * WINDOW_HEIGHT, sizeof(char));
 }
 
-char * Draw(char * world, double xpos, double ypos, int xsize, int ysize) {
+char * Draw(char * world, double xpos, double ypos, int xsize, int ysize, char state) {
 	xpos = xpos / SCALE;
 	ypos = ypos / SCALE;
 
@@ -43,7 +43,7 @@ char * Draw(char * world, double xpos, double ypos, int xsize, int ysize) {
 	for (int i = ypos - ysize / 2; i < ypos + ysize / 2; i++) {
 		for (int j = xpos - xsize / 2; j < xpos + xsize / 2; j++) {
 			if (i * WINDOW_WIDTH + j >= 0 && i * WINDOW_WIDTH + j < WINDOW_LENGTH) {
-				world[i * WINDOW_WIDTH + j] = 1;
+				world[i * WINDOW_WIDTH + j] = state;
 			}
 		}
 	}

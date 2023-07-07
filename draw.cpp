@@ -1,7 +1,6 @@
 #include "main.h"
+#include "config.h"
 #include <cstdlib>
-#include <iostream>
-
 
 unsigned char * GenImage(char * input) {
 	unsigned char * image = (unsigned char *) calloc( (WINDOW_WIDTH + 1) * WINDOW_HEIGHT * 3, sizeof(unsigned char));

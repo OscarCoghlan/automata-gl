@@ -1,4 +1,7 @@
 #include "main.h"
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
+#include "config.h"
 #include <unistd.h>
 #include <iostream>
 
@@ -115,7 +118,12 @@ int main() {
 		int state = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT);
 		if (state == GLFW_PRESS)
 		{
-			Draw(world, xpos, ypos, BRUSH_SIZE, BRUSH_SIZE);
+			Draw(world, xpos, ypos, BRUSH_SIZE, BRUSH_SIZE, 1);
+		}
+		int state2 = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT);
+		if (state2 == GLFW_PRESS)
+		{
+			Draw(world, xpos, ypos, BRUSH_SIZE_CLEAR, BRUSH_SIZE_CLEAR, 0);
 		}
 
 #ifdef DEBUG
