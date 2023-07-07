@@ -168,7 +168,7 @@ int main() {
 
         //Poll for and process events
         glfwPollEvents();
-		std::this_thread::sleep_for(std::chrono::milliseconds(30));	
+		//std::this_thread::sleep_for(std::chrono::milliseconds(30));	
     }
 
 	glfwTerminate();
