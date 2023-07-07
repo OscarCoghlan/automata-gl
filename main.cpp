@@ -4,6 +4,9 @@
 #include "config.h"
 #include <unistd.h>
 #include <iostream>
+#include <chrono>
+#include <thread>
+
 
 
 void error_callback(int error, const char* description)
@@ -165,7 +168,7 @@ int main() {
 
         //Poll for and process events
         glfwPollEvents();
-		
+		std::this_thread::sleep_for(std::chrono::milliseconds(30));	
     }
 
 	glfwTerminate();
