@@ -1,4 +1,4 @@
-glad.c -linguist-vendored
+glad.c linguist-vendored
 include/** linguist-vendored
 include/glad/** linguist-vendored
 include/GLFW/** linguist-vendored
