@@ -1,6 +1,6 @@
 # automata-gl  
 Conway's game of life and other cellular automata implemented in C++ using opengl for rendering.  
-Tested on x11 and windows (you'll have to figure out how to build on windows yourself).  
+Tested on Arch linux with x11.
   
 Dependencies:  
  &nbsp;\- glfw
